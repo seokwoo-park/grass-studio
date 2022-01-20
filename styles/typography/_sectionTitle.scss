@@ -1,0 +1,49 @@
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+//// START POINT ////
+
+.section__title--container {
+  padding: 0 10rem;
+  width: 100vw;
+  max-width: 100%;
+
+  .section__title--text--container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@include mobile() {
+  .section__title--container {
+    padding: 0 1rem;
+
+    .section__title--text--container {
+      flex-direction: column;
+    }
+  }
+}
+
+@include tablet() {
+  .section__title--container {
+    padding: 0 5rem;
+
+    .section__title--text--container {
+      flex-direction: column;
+    }
+  }
+}

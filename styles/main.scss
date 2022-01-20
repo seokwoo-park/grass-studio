@@ -1,0 +1,17 @@
+@use "base/normalize";
+@use "base/variables";
+@use "base/_mixin.scss";
+
+@use "hero/hero";
+@use "hero/header";
+@use "hero/nav-bar";
+@use "hero/cta";
+
+@use "typography/sectionTitle";
+@use "typography/anotherTitle";
+@use "typography/typography";
+
+@use "gallery/boxes.scss";
+@use "gallery/lightbox.scss";
+
+@use "footer/footer";

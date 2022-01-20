@@ -1,0 +1,91 @@
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+//// START POINT ////
+
+.another__title--container {
+  padding: 0.5rem 10rem;
+  background-color: rgba(249, 249, 249, 1);
+
+  .another__title--text--container {
+    img {
+      width: 30%;
+      float: left;
+      object-fit: contain;
+      margin-right: 2rem;
+    }
+
+    .another__title--text {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .another__title--btn {
+    color: rgba(93, 103, 108, 1);
+    font-size: 1.3rem;
+    font-weight: 900;
+
+    outline: none;
+    border: 0.2em solid rgba(93, 103, 108, 1);
+    border-radius: 2em;
+    width: 10em;
+    background-color: transparent;
+    align-self: flex-end;
+    text-align: center;
+    text-decoration: none;
+    margin: 3rem auto;
+    display: block;
+
+    &:hover {
+      background-color: rgba(93, 103, 108, 1);
+      color: #fff;
+    }
+  }
+}
+
+@include mobile() {
+  .another__title--container {
+    padding: 1rem;
+
+    .another__title--text--container {
+      img {
+        width: 100%;
+        margin: 1rem auto;
+        float: unset;
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .another__title--container {
+    padding: 1rem 5rem;
+    .another__title--text--container {
+      img {
+        width: 100%;
+        margin: 2rem auto;
+        float: unset;
+      }
+
+      .another__title--text {
+        margin: 1 auto;
+      }
+    }
+
+    .another__title--btn {
+      font-size: 3rem;
+    }
+  }
+}

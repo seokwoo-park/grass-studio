@@ -1,0 +1,126 @@
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+//// START POINT ////
+
+.cta {
+  position: absolute;
+  top: 40%;
+  right: 13%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  .cta__qoute--big {
+    white-space: pre-line;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 3.5rem;
+  }
+
+  .cta__quote--small--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+
+    .cta__quote--small {
+      color: #fff;
+      font-size: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .cta__quote--btn {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 900;
+
+      outline: none;
+      border: 0.2em solid #fff;
+      border-radius: 2em;
+      height: 3em;
+      width: 8em;
+      background-color: transparent;
+      align-self: flex-end;
+      text-align: center;
+      text-decoration: none;
+      padding-top: 10px;
+
+      &:hover {
+        background-color: #fff;
+        color: rgba(93, 103, 108, 1);
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .cta {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    .cta__qoute--big {
+      white-space: unset;
+      font-size: 3rem;
+    }
+
+    .cta__quote--small--container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .cta__quote--small {
+        font-size: 1.4rem;
+      }
+      .cta__quote--btn {
+        width: 100%;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .cta {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    .cta__qoute--big {
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+    }
+
+    .cta__quote--small--container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .cta__quote--small {
+        color: #fff;
+        font-size: 2.5rem;
+        white-space: pre-line;
+      }
+
+      .cta__quote--btn {
+        width: 100%;
+        font-size: 1.7rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}

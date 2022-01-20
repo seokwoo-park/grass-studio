@@ -1,0 +1,55 @@
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+//// START POINT ////
+
+.header {
+  width: 100vw;
+  max-width: 100%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  padding: 3rem 1rem 0 1rem;
+
+  .header__logo {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+}
+
+@include mobile() {
+  .header {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .header__logo {
+      font-size: 3.5rem;
+    }
+  }
+}
+@include tablet() {
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    .header__logo {
+      font-size: 6rem;
+    }
+  }
+}

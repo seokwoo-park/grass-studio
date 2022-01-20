@@ -1,0 +1,26 @@
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+//// START POINT ////
+
+.hero {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  background: {
+    image: url("https://miro.medium.com/max/1400/0*DevFTHKRlh8-EQpt");
+    repeat: no-repeat;
+    size: cover;
+    position: center bottom;
+  }
+}
